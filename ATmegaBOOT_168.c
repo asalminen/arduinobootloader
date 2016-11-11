@@ -287,8 +287,10 @@ int main(void)
 	WDTCSR |= _BV(WDCE) | _BV(WDE);
 	WDTCSR = 0;
 
-	// Check if the WDT was used to reset, in which case we dont bootload and skip straight to the code. woot.
-	if (! (ch &  _BV(EXTRF))) // if its a not an external reset...
+	// Check if the WDT was used to reset, in which case we bootload and on external reset skip straight to the code.
+	if (ch &  _BV(EXTRF)) // if its an external reset...
+		app_start();  // skip bootloader
+	else if (eeprom_read_byte(E2END)!=0xff) // if last eeprom value is not 0xff skip straight to the code. Change last eeprom value if u do not want to stay in bootloader.
 		app_start();  // skip bootloader
 #else
 	asm volatile("nop\n\t");
