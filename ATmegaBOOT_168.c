@@ -293,6 +293,8 @@ int main(void)
 	if (! (ch &  _BV(EXTRF))) // if its a not an external reset...
 		app_start();  // skip bootloader
 #else
+	MCUSR = 0;
+	wdt_disable();
 	asm volatile("nop\n\t");
 #endif
 
