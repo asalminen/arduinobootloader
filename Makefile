@@ -23,8 +23,8 @@ ISPTOOL	   = stk500v2
 ISPPORT	   = usb
 ISPSPEED   = -b 115200
 
-MCU_TARGET = atmega168
-LDSECTION  = --section-start=.text=0x3800
+MCU_TARGET = atmega328
+LDSECTION  = --section-start=.text=0x7800
 
 # the efuse should really be 0xf8; since, however, only the lower
 # three bits of that byte are used on the atmega168, avrdude gets
