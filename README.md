@@ -1,6 +1,6 @@
-# Arduino bootloader
+# Arduino / atmega328 bootloader
 
-Arduino bootloader which starts in software reset and can be controlled with eeprom flag. For wireless flashing with HC-05 and HC-06 BT modules whitout hw mods.
+This bootloader starts in software (and hw) reset and can be controlled with eeprom flag. Used for wireless flashing with HC-05 and HC-06 BT modules whitout hw mods. This sould work with any serial bridge that is tx/rx capaple.
 
 This is derived from https://github.com/arduino/Arduino/tree/master/hardware/arduino/avr/bootloaders/atmega
 I was unable to fork only needed dir and whole arduino project was too large to clone just for fun. Thus created new repo.
