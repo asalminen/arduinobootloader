@@ -19,7 +19,7 @@ Usage
 5. Bootloader is waiting for you first flash so do avrdude -p atmega328p -c arduino -P /dev/rfcomm0 -b 57600 -D  -U flash:w:main.hex:i ( flash something that you can use to softreset the device )
 6. Next time bootloader is not waiting for you as your app is running. You need to reset atmega. HW reset is ok, but as we did not connect hw reset to anything we have to do soft reset. Watch dog is able to soft reset atmega so do wdt_enable(WDTO_15MS); while(1); in your app and bootlader will start in about 16MS.
 7. Bootlader is waiting 10 sec before continueing to normal mode. Kill serial terminal ( if you are using serial for communicating and flashing ) and starting flashing "avrdude -p atmega328p -c arduino -P /dev/rfcomm0 -b 57600 -D  -U flash:w:main.hex:i" 
-8. If you like you can disable bootlader setting last eeprom byte to sometthing else than 0xff. While bootloader is disabled hw reset and watchdog reset are fast.
+8. If you like you can disable bootloader by setting last eeprom byte to sometthing else than 0xff. While bootloader is disabled hw reset and watchdog reset are fast.
 9. Enable bootloader before next flash by setting last eeprom byte to 0xff. While bootloader is enabled all resets will take about 10sec including hw and watchdog resets.
 
 Main app example simplet
