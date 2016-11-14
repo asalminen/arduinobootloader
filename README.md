@@ -22,10 +22,10 @@ Usage
 8. If you like you can disable bootlader setting last eeprom byte to sometthing else than 0xff. While bootloader is disabled hw reset and watchdog reset are fast.
 9. Enable bootloader before next flash by setting last eeprom byte to 0xff. While bootloader is enabled all resets will take about 10sec including hw and watchdog resets.
 
-main app example simplet
+Main app example simplet
 ========================
 
-//Alway flash something that can use for soft reset and disable/enable for bootloader is good to have too
+Alway flash something that can used for soft reset and disable/enable for bootloader is good to have too
 
 		// Enable bootlader mode and reboot
 		if( command[1] == 'E' )
