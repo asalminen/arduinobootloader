@@ -1,6 +1,6 @@
 # Arduino / atmega328 bootloader for over air flashing (BT)
 
-This bootloader starts by default after software or hw reset and thus enableds flashing mode after softeare watchdog reset. Blootloader can be disabled and enabled by eeprom flag. I use this for wireless flashing with HC-05 and HC-06 BT modules whitout sny hw mods to BT modules. This sould work with any serial bridge that is tx/rx capaple. I use this also in some cases when aruino bootloader needs to boot faster as boot is fast when bootloader is disabled. 
+This bootloader starts by default after software or hw reset and thus enableds flashing mode after software watchdog reset. Blootloader can be disabled and enabled by eeprom flag. I use this for wireless flashing with HC-05 and HC-06 BT modules whitout any hw mods to BT modules. This should work with any serial bridge that is tx/rx capaple. I use this bootloader also in some cases when aruino needs to boot faster as boot is fast when bootloader is disabled. 
 
 This repo is copy from https://github.com/arduino/Arduino/tree/master/hardware/arduino/avr/bootloaders/atmega
 I was unable to fork only needed dir and whole arduino project was too large to clone just for fun. Thus created new repo. Initial commit for .c and Makefile is copy from Arduino project for easy compare. Makefile has flashing commands, but I did find easyer to make flash script for flashing.
